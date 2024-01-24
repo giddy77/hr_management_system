@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('employee_trainings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->foreignId('training_program_id')->constrained('training_programs')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('')->onDelete('');
+            $table->string('complettion_status')->nullable();
             $table->timestamps();
         });
     }
