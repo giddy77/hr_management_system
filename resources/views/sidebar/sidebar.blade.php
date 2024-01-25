@@ -23,7 +23,7 @@
                     <li class="menu-title">Employees</li><!-- /.menu-title -->
 
                     <li class="menu-item">
-                        <a href="#"
+                        <a href="{{ route('users.index') }}"
                             aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>All Employees</a>
                     </li>
                     <li class="menu-item">

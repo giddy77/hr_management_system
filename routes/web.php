@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +18,10 @@ require __DIR__.'/auth.php';
 */
 Auth::routes();
 
-Route::get('/', function () {
-    return view('layouts.layout');
-});
+Route::middleware(['auth'])->group(function(){
+// Route::get('/', function () {
+//     return view('layouts.layout');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,4 +38,11 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::resource('users', UserController::class);
+
+});

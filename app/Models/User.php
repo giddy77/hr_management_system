@@ -61,4 +61,19 @@ class User extends Authenticatable
     {
         $this->belongsTo(Job::class);
     }
+
+    public function position()
+    {
+        $this->belongsTo(Position::class);
+    }
+
+    public function department()
+    {
+        $this->belongsTo(Department::class);
+    }
+
+    public function salary()
+    {
+        $this->hasOne(Salary::class);
+    }
 }

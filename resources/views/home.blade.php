@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+{{-- @extends('layouts.layout')
 
 @section('content')
     <!-- /#left-panel -->
@@ -130,4 +130,4 @@
         </footer>
         <!-- /.site-footer -->
     </div>
-@endsection
+@endsection --}}

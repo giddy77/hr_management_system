@@ -41,6 +41,7 @@ class UserFactory extends Factory
             'nationality' => $this->faker->countryCode,
             'status' => $this->faker->randomElement(['Active', 'Inactive']),
             'job_id' => $this->faker->numberBetween(1, 5),
+            'position_id'=>$this->faker->numberBetween(1,8),
             'email_verified_at' => $this->faker->dateTimeThisDecade,
             'password' => Hash::make('password'),
         ];
