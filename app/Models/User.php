@@ -20,13 +20,21 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'contact',
+        'phone',
+        'alt_phone',
         'date_joined',
         'address',
         'staff_no',
         'emp_status',
+        'role',
+        'manager_id',
         'review_id',
-        'password'
+        'photo',
+        'nationality',
+        'status',
+        'job_id',
+        'email_verified_at',
+        'password',
     ];
 
     /**
@@ -48,4 +56,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed', //passwords are hashed using bcrypt algorithm SHA-256
     ];
+
+    public function job()
+    {
+        $this->belongsTo(Job::class);
+    }
 }

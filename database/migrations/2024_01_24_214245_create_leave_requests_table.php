@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('leave_requests', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('leave_type_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('leave_type_id')->constrained('leave_types')->cascadeOnDelete();
             $table->string('start_date')->nullable();
             $table->string('end_date')->nullable();
             $table->string('status')->default('pending');

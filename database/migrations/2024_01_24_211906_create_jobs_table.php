@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('max_salary');
             $table->string('description');
             $table->string('requirements');
+            $table->string('added_by'); //user_id
             $table->timestamps();
         });
     }

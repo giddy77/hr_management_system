@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -21,14 +22,27 @@ class UserFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    protected $model = User::class;
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
+            'name' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail,
+            'phone' => $this->faker->unique()->phoneNumber,
+            'alt_phone' => $this->faker->phoneNumber,
+            'date_joined' => $this->faker->dateTimeThisDecade,
+            'address' => $this->faker->address,
+            'staff_no' => 'STAFF' . $this->faker->unique()->randomNumber(5),
+            'emp_status' => $this->faker->randomElement(['Active', 'Inactive']),
+            'role' => $this->faker->numberBetween(1,5),
+            'manager_id' => $this->faker->numberBetween(1, 5),
+            'review_id' => $this->faker->numberBetween(1, 5),
+            'photo' => 'path/to/photo.jpg',
+            'nationality' => $this->faker->countryCode,
+            'status' => $this->faker->randomElement(['Active', 'Inactive']),
+            'job_id' => $this->faker->numberBetween(1, 5),
+            'email_verified_at' => $this->faker->dateTimeThisDecade,
+            'password' => Hash::make('password'),
         ];
     }
 
