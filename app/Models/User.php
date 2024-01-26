@@ -26,12 +26,16 @@ class User extends Authenticatable
         'address',
         'staff_no',
         'emp_status',
+        'nationality',
+        'status',
         'role',
         'manager_id',
         'review_id',
         'photo',
-        'nationality',
-        'status',
+        'age',
+        'gender',
+        'department_id',
+        'position_id',
         'job_id',
         'email_verified_at',
         'password',
@@ -60,11 +64,6 @@ class User extends Authenticatable
     public function job()
     {
         $this->belongsTo(Job::class);
-    }
-
-    public function position()
-    {
-        $this->belongsTo(Position::class);
     }
 
     public function department()

@@ -38,8 +38,11 @@ class UserFactory extends Factory
             'manager_id' => $this->faker->numberBetween(1, 5),
             'review_id' => $this->faker->numberBetween(1, 5),
             'photo' => 'path/to/photo.jpg',
+            'age' => $this->faker->numberBetween(1,50),
+            'gender'=> $this->faker->randomElement(['MALE','FEMALE']),
+            'department_id'=>$this->faker->numberBetween(1,10),
             'nationality' => $this->faker->countryCode,
-            'status' => $this->faker->randomElement(['Active', 'Inactive']),
+            'status' => $this->faker->randomElement(['Active', 'Inactive']), // get rid of one//emp_status
             'job_id' => $this->faker->numberBetween(1, 5),
             'position_id'=>$this->faker->numberBetween(1,8),
             'email_verified_at' => $this->faker->dateTimeThisDecade,

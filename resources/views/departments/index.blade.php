@@ -1,6 +1,5 @@
 @extends('layouts.layout')
 @section('content')
-
 <div class="breadcrumbs">
     <div class="breadcrumbs-inner">
         <div class="row m-0">
@@ -15,7 +14,7 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a class="btn btn-primary" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>Add new</a></li>
+                            <li><a class="btn btn-primary" href="{{ route('departments.create') }}"><i class="fa fa-plus"></i>Add new</a></li>
                             {{-- <li><a href="#">Table</a></li>
                             <li class="active">Data table</li> --}}
                         </ol>
@@ -33,27 +32,27 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header text-center">
-                        <strong class="card-title">Employees</strong>
+                        <strong class="card-title">Departments</strong>
                     </div>
                     <div class="card-body">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Staff_code</th>
+                                    <th>#</th>
                                     <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Department</th>
-                                    <th>Salary</th>
+                                    <th>Manager</th>
+                                    <th>Location</th>
+                                    {{-- <th>Salary</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($users as $user )
+                                @foreach ($departments as $department )
                                 <tr>
-                                    <td>{{ $user->staff_no }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->position_id }}</td>
-                                    <td>{{ $user->department_id }}</td>
-                                    <td>${{ $user->salary_id }}</td>
+                                    <td>{{ $department->id }}</td>
+                                    <td>{{ $department->name }}</td>
+                                    <td>{{ $department->manager_id }}</td>
+                                    <td>{{ $department->location }}</td>
+                                    {{-- <td>${{ $department->salary_id }}</td> --}}
                                 </tr>
                                 @endforeach
 

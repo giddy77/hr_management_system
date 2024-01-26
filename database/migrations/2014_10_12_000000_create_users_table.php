@@ -27,6 +27,9 @@ return new class extends Migration
             $table->integer('manager_id');
             $table->string('review_id');
             $table->string('photo');
+            $table->string('age');
+            $table->string('gender');
+            $table->foreignId('department_id')->cascadeOnDelete();
             $table->string('position_id')->constrained()->cascadeOnDelete();
             $table->foreignId('job_id')->nullable();//->constrained()->onDelete('cascade');
             $table->timestamp('email_verified_at')->nullable();
