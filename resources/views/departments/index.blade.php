@@ -42,7 +42,7 @@
                                     <th>Name</th>
                                     <th>Manager</th>
                                     <th>Location</th>
-                                    {{-- <th>Salary</th> --}}
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,7 +52,7 @@
                                     <td>{{ $department->name }}</td>
                                     <td>{{ $department->manager_id }}</td>
                                     <td>{{ $department->location }}</td>
-                                    {{-- <td>${{ $department->salary_id }}</td> --}}
+                                    <td><a class="btn btn-warning btn-sm" href="{{ route('departments.show',$department) }}"><i class="fa fa-eye"></i> View</a></td>
                                 </tr>
                                 @endforeach
 

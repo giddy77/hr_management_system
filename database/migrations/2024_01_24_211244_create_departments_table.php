@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->string('manager_id')->nullable();
+            $table->foreignId('manager_id')->constrained('users')->cascadeOnDelete();
             $table->string('location')->nullable();
             $table->string('description');
             $table->timestamps();

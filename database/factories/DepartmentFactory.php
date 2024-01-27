@@ -24,10 +24,9 @@ class DepartmentFactory extends Factory
 
         return [
             'name'=>$faker->word,
-            'user_id'=>$randomUser->id,//(User::class)->create()->id;
             'manager_id' => $randomUser->id, // Adjust as needed
-        'location' => $faker->city,
-        'description' => $faker->sentence,
+            'location' => $faker->city,
+            'description' => $faker->sentence,
         ];
 
     }

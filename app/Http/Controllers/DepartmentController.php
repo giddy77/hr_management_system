@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
@@ -37,7 +38,8 @@ class DepartmentController extends Controller
      */
     public function show(Department $department)
     {
-        //
+        $employees = User::where('department_id',$department->id)->get();
+        return view('departments.show',['department'=>$department, 'employees'=> $employees]);
     }
 
     /**

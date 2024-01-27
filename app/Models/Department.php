@@ -16,4 +16,14 @@ class Department extends Model
         'location',
         'description',
     ];
+
+    public function users()
+    {
+        $this->hasMany(User::class);
+    }
+
+    public function manager()
+    {
+       return $this->hasOne(User::class,'id','manager_id');
+    }
 }
