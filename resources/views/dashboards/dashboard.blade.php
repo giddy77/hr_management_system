@@ -1,6 +1,15 @@
 @extends('layouts.layout')
 @section('content')
 <body>
+    @php
+    use App\Http\Controllers\DashboardController;
+
+        $employees = DashboardController::counts()[0];
+        $departments = DashboardController::counts()[2];
+        $jobs = DashboardController::counts()[3];
+        $trainings = DashboardController::counts()[1];
+    @endphp
+
     <!-- Right Panel -->
     {{-- <div id="right-panel" class="right-panel"> --}}
 
@@ -21,7 +30,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">2986</span></div>
+                                            <div class="stat-text"><span>{{ $employees }}</span></div>
                                             <div class="stat-heading">Employees</div>
                                         </div>
                                     </div>
@@ -39,7 +48,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">23569</span></div>
+                                            <div class="stat-text"><span>{{ $trainings }}</span></div>
                                             <div class="stat-heading">Trainings</div>
                                             <small class="stat-heading">(upcoming)</small>
                                         </div>
@@ -58,7 +67,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">3435</span></div>
+                                            <div class="stat-text"><span >{{ $jobs }}</span></div>
                                             <div class="stat-heading">Projects</div>
                                         </div>
                                     </div>
@@ -72,12 +81,12 @@
                             <div class="card-body">
                                 <div class="stat-widget-five">
                                     <div class="stat-icon dib flat-color-3">
-                                        <i class="pe-7s-cash"></i>
+                                        <i class="pe-7s-network"></i>
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">349</span></div>
-                                            <div class="stat-heading">Clients</div>
+                                            <div class="stat-text"><span >{{ $departments }}</span></div>
+                                            <div class="stat-heading">Depatments</div>
                                         </div>
                                     </div>
                                 </div>
