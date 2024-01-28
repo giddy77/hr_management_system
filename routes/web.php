@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\BankAccountController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\PayRollController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TaxController;
 use App\Http\Controllers\UserController;
 use App\Models\Department;
 use Illuminate\Support\Facades\Auth;
@@ -47,5 +50,6 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::resource('users', UserController::class);
 Route::resource('departments', DepartmentController::class);
-
+Route::resource('taxes', TaxController::class);
+Route::resource('paystubs',PayRollController::class);
 });

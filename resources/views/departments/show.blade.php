@@ -33,7 +33,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header text-center">
-                        <strong class="card-title">{{ $department->name }}</strong>
+                        <strong class="card-title">{{ $department->name }}'s staff</strong>
                     </div>
                     <div class="card-body">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">

@@ -31,7 +31,7 @@
                                     <div class="stat-content">
                                         <div class="text-left dib">
                                             <div class="stat-text"><span>{{ $employees }}</span></div>
-                                            <div class="stat-heading">Employees</div>
+                                            <div class="stat-heading"> <a href="{{ route('users.index') }}">Employees</a></div>
                                         </div>
                                     </div>
                                 </div>

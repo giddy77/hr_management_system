@@ -9,36 +9,54 @@
                     <li class="menu-title">Organization Setup</li><!-- /.menu-title -->
                     <li class="menu-item">
                         <a href="#"
-                            aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Structure</a>
+                            aria-expanded="false"> <i class="menu-icon fa fa-cogs" style="color: green"></i>Structure</a>
                     </li>
                     <li class="menu-item">
                         <a href="#"
-                            aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Schedule</a>
+                            aria-expanded="false"> <i class="menu-icon fa fa-table" style="color: rebeccapurple"></i>Schedule</a>
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('departments.index') }}"
-                            aria-expanded="false"> <i class="menu-icon fa fa-university"></i>Departments</a>
+                            aria-expanded="false"> <i class="menu-icon fa fa-university" style="color: royalblue"></i>Departments</a>
                     </li>
 
                     <li class="menu-title">Employees</li><!-- /.menu-title -->
 
                     <li class="menu-item">
                         <a href="{{ route('users.index') }}"
-                            aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>All Employees</a>
+                            aria-expanded="false"> <i class="menu-icon fa fa-users" style="color: brown"></i>All</a>
                     </li>
                     <li class="menu-item">
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>On Leave </a>
+                        <a href="widgets.html"> <i class="menu-icon fa fa-user-plus" style="color: green"></i>OnBoading </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="widgets.html"> <i class="menu-icon fa fa-user-times" style="color: red"></i>OffBoarding </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="widgets.html"> <i class="menu-icon fa fa-tag" style="color: blue"></i>Onleave </a>
                     </li>
                     <li class="menu-title">Payroll</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a>
-                            </li>
-                        </ul>
+                        {{-- <li class="menu-item">
+                            <a href=""
+                                aria-expanded="false"> <i style="color: rgb(240, 111, 79)" class="menu-icon fa fa-tasks"></i>Bank Accounts</a>
+                        </li> --}}
+                        <li class="menu-item">
+                            <a href="{{ route('paystubs.index') }}"
+                                aria-expanded="false"> <i class="menu-icon fa fa-credit-card-alt" style="color: violet"></i>Pay info</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{{ route('taxes.index') }}"
+                                aria-expanded="false"> <i style="color: rgb(240, 111, 79)" class="menu-icon fa fa-money"></i>Taxes</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{{ route('users.index') }}"
+                                aria-expanded="false"> <i class="menu-icon fa fa-plus-square" style="color: green"></i>Bonuses</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{{ route('users.index') }}"
+                                aria-expanded="false"> <i class="menu-icon fa fa-minus-square" style="color: red"></i>Deductions</a>
+                        </li>
                     </li>
                     <li class="menu-title">Projects</li><!-- /.menu-title -->
                     <li class="menu-item">
