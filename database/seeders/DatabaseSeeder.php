@@ -22,7 +22,11 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(UserSeeder::class);
         $this->call(DepartmentSeeder::class);
-        $this->call(Tax::class);
+        // $this->call(Tax::class);
         $this->call(PayRollSeeder::class);
+        $this->call(PayrollSettingSeeder::class);
+        $this->call(PositionSeeder::class);
+        $this->call(TrainingProgramSeeder::class);
+        $this->call(ProjectSeeder::class);
     }
 }

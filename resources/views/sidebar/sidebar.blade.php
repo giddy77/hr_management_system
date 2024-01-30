@@ -8,7 +8,7 @@
                     </li>
                     <li class="menu-title">Organization Setup</li><!-- /.menu-title -->
                     <li class="menu-item">
-                        <a href="#"
+                        <a href="{{ route('structure') }}"
                             aria-expanded="false"> <i class="menu-icon fa fa-cogs" style="color: green"></i>Structure</a>
                     </li>
                     <li class="menu-item">
@@ -60,7 +60,7 @@
                     </li>
                     <li class="menu-title">Projects</li><!-- /.menu-title -->
                     <li class="menu-item">
-                        <a href="#"
+                        <a href="{{ route('projects.index') }}"
                             aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>All Projects</a>
                     </li>
                     <li class="menu-item">

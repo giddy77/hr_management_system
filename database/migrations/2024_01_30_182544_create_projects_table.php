@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('training_programs', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
-            $table->string('trainer');
+            $table->string('start');
+            $table->string('end');
             $table->string('duration');
-            $table->bigInteger('cost');
-            $table->enum('status', ['pending','active','completed']);
+            $table->foreignId('department_id')->constrained();
             $table->timestamps();
         });
     }
@@ -28,6 +27,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('training_programs');
+        Schema::dropIfExists('projects');
     }
+
 };

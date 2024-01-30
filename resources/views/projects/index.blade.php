@@ -1,5 +1,8 @@
 @extends('layouts.layout')
 @section('content')
+@php
+    $i = 0;
+@endphp
 <div class="breadcrumbs">
     <div class="breadcrumbs-inner">
         <div class="row m-0">
@@ -14,7 +17,7 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a class="btn btn-primary" href="{{ route('departments.create') }}"><i class="fa fa-plus"></i>Add new</a></li>
+                            <li><a class="btn btn-primary" href="{{ route('trainings.create') }}"><i class="fa fa-plus"></i>Add new</a></li>
                             {{-- <li><a href="#">Table</a></li>
                             <li class="active">Data table</li> --}}
                         </ol>
@@ -32,30 +35,34 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header text-center">
-                        <strong class="card-title">Departments</strong>
+                        <strong class="card-title">Trainings</strong>
                     </div>
                     <div class="card-body">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>Name</th>
-                                    <th>Manager</th>
-                                    <th>Location</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Duration</th>
+                                    <th>Department</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($departments as $department )
+                                @foreach ($projects as $project )
+
                                 <tr>
-                                    <td>{{ $department->id }}</td>
-                                    <td>{{ $department->name }}</td>
-                                    <td>{{ $department->manager_id }}</td>
-                                    <td>{{ $department->location }}</td>
+
+                                    <td>{{ $project->name }}</td>
+                                    <td>{{ $project->start }}</td>
+                                    <td>{{ $project->end }}</td>
+                                    <td>{{ $project->duration }}</td>
+                                    <td>{{ $project->department->name }}</td>
                                     <td>
-                                        <a class="btn btn-warning btn-sm" href="{{ route('departments.show',$department) }}"><i class="fa fa-eye"></i> View</a>
-                                        <a class="btn btn-primary btn-sm" href=""><i class="fa fa-pencil mx-2" >edit</i></a>
-                                        <a class="btn btn-danger btn-sm" href=""><i class="fa fa-trash" >delete</i></a>
+                                        <a href="" class="fa fa-pencil mx-2" style="color: rgb(38, 104, 219)"></a>
+
+                                        <a href="" class="fa fa-trash" style="color: red"></a>
                                     </td>
                                 </tr>
                                 @endforeach

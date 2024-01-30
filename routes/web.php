@@ -4,9 +4,12 @@ use App\Http\Controllers\BankAccountController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\PayRollController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TaxController;
+use App\Http\Controllers\TrainingProgramController;
 use App\Http\Controllers\UserController;
 use App\Models\Department;
+use App\Models\TrainingProgram;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -47,9 +50,12 @@ Route::middleware('auth')->group(function () {
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+Route::view('structure','structure.index')->name('structure');
 
 Route::resource('users', UserController::class);
 Route::resource('departments', DepartmentController::class);
 Route::resource('taxes', TaxController::class);
 Route::resource('paystubs',PayRollController::class);
+Route::resource('trainings', TrainingProgramController::class);
+Route::resource('projects', ProjectController::class);
 });

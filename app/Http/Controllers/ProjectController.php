@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TrainingProgram;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
-class TrainingProgramController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $trainings = TrainingProgram::with('trainer','department')->latest()->get();
-        return view('trainings.index',compact('trainings'));
+        $projects = Project::with('department')->latest()->get();
+        return view("projects.index", compact("projects"));
     }
 
     /**
@@ -35,7 +35,7 @@ class TrainingProgramController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TrainingProgram $trainingProgram)
+    public function show(Project $project)
     {
         //
     }
@@ -43,7 +43,7 @@ class TrainingProgramController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TrainingProgram $trainingProgram)
+    public function edit(Project $project)
     {
         //
     }
@@ -51,7 +51,7 @@ class TrainingProgramController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TrainingProgram $trainingProgram)
+    public function update(Request $request, Project $project)
     {
         //
     }
@@ -59,7 +59,7 @@ class TrainingProgramController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TrainingProgram $trainingProgram)
+    public function destroy(Project $project)
     {
         //
     }
