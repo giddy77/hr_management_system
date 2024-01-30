@@ -75,4 +75,9 @@ class User extends Authenticatable
     {
         $this->hasOne(Salary::class);
     }
+
+    public function position()
+    {
+        $this->hasOne(Position::class);
+    }
 }

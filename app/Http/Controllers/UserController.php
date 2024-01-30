@@ -15,7 +15,9 @@ class UserController extends Controller
     public function index()
     {
         $users = User::latest()->paginate(15);
-        return view('employees.index', compact("users"));
+        $departments = ['Devops', 'sales','management','human resource'];
+        $positions = ['junior software dev', 'senior software engineer', 'admin'];
+        return view('employees.index', compact("users","departments", "positions"));
     }
 
     /**

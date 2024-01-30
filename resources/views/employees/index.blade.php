@@ -1,6 +1,8 @@
 @extends('layouts.layout')
 @section('content')
-
+@php
+    $i = 0;
+@endphp
 <div class="breadcrumbs">
     <div class="breadcrumbs-inner">
         <div class="row m-0">
@@ -43,17 +45,39 @@
                                     <th>Name</th>
                                     <th>Position</th>
                                     <th>Department</th>
+                                    <th>emp_status</th>
                                     <th>Salary</th>
+
+                                    <th>payment status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($users as $user )
+
                                 <tr>
+
                                     <td>{{ $user->staff_no }}</td>
                                     <td>{{ $user->name }}</td>
-                                    <td>{{ $user->position_id }}</td>
-                                    <td>{{ $user->department_id }}</td>
-                                    <td>${{ $user->salary_id }}</td>
+                                    <td>{{ $positions[$i++ ] ?? 'manager' }}</td>
+                                    <td>{{ $departments[$i++ ] ?? 'admin' }}</td>
+                                    <td>
+                                        @if ($user->emp_status == 'Inactive')
+                                        <button class="btn btn-danger btn-sm rounded">{{ $user->emp_status }}</button>
+                                        @elseif ($user->emp_status == 'Active')
+                                        <button class="btn btn-success btn-sm rounded">{{ $user->emp_status }}</button>
+                                        @else
+                                        <button class="btn btn-warning btn-sm rounded">{{ $user->emp_status }}</button>
+                                        @endif
+                                        <!-- Content inside the table cell -->
+                                    </td>
+                                    <td>ksh {{ $user->salary_id ?? '400,000' }}</td>
+                                    <td>
+                                        @if ($user->status =='1')
+                                        <button class="btn btn-success btn-sm rounded">paid</button>
+                                        @else
+                                        <button class="btn btn-danger btn-sm rounded">unpaid</button>
+                                        @endif
+                                    </td>
                                 </tr>
                                 @endforeach
 

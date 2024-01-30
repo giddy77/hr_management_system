@@ -33,7 +33,7 @@ class UserFactory extends Factory
             'date_joined' => $this->faker->dateTimeThisDecade,
             'address' => $this->faker->address,
             'staff_no' => 'STAFF' . $this->faker->unique()->randomNumber(5),
-            'emp_status' => $this->faker->randomElement(['Active', 'Inactive']),
+            'emp_status' => $this->faker->randomElement(['Active', 'Inactive','leave']), //let it handle emp status
             'role' => $this->faker->numberBetween(1,5),
             'manager_id' => $this->faker->numberBetween(1, 5),
             'review_id' => $this->faker->numberBetween(1, 5),
@@ -42,7 +42,7 @@ class UserFactory extends Factory
             'gender'=> $this->faker->randomElement(['MALE','FEMALE']),
             'department_id'=>$this->faker->numberBetween(1,10),
             'nationality' => $this->faker->countryCode,
-            'status' => $this->faker->randomElement(['Active', 'Inactive']), // get rid of one//emp_status
+            'status' => $this->faker->randomElement(['1', '2']), // handle payment status
             'job_id' => $this->faker->numberBetween(1, 5),
             'position_id'=>$this->faker->numberBetween(1,8),
             'email_verified_at' => $this->faker->dateTimeThisDecade,

@@ -39,7 +39,7 @@
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>staff_no</th>
+                                    <th>Staff_no</th>
                                     <th>Name</th>
                                     <th>Phone</th>
                                     <th>Emp_status</th>

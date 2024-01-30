@@ -71,16 +71,22 @@
                         <a href="#"
                             aria-expanded="false"> <i class="menu-icon fa fa-check"></i>Completed</a>
                     </li>
-                    <li class="menu-title">OnBoarding</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a>
-                            </li>
-                        </ul>
+                    <li class="menu-title">Reports</li><!-- /.menu-title -->
+                    <li class="menu-item">
+                        <a href="{{ route('users.index') }}"
+                            aria-expanded="false"> <i class="menu-icon fa fa-table" style="color: rgb(44, 161, 46)"></i>Income vs Expense</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('users.index') }}"
+                            aria-expanded="false"> <i class="menu-icon fa fa-users" style="color: rgb(49, 176, 30)"></i>Monthly Attendance</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('users.index') }}"
+                            aria-expanded="false"> <i class="menu-icon fa fa-tag" style="color: rgb(20, 81, 14)"></i>Leave</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('users.index') }}"
+                            aria-expanded="false"> <i class="menu-icon fa fa-money" style="color: rgb(64, 106, 21)"></i>payroll</a>
                     </li>
                     <li class="menu-title">Training</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
